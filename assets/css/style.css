@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+body, html {
+  margin: 0; padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  height: 100%; overflow: hidden;
+}
+.hero-wrap {
+  position: relative;
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1620851484990-3e785d3aa7c6?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+  display: flex; align-items: center; justify-content: center;
+}
+.overlay {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+}
+.glow-title {
+  font-size: 3.5em;
+  color: #00fff7;
+  text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
+  animation: pulse 2s infinite alternate;
+}
+@keyframes pulse {
+  from { text-shadow: 0 0 10px #0ff; }
+  to { text-shadow: 0 0 30px #0ff, 0 0 60px #00fff7; }
+}
+.tagline {
+  color: #f3f3f3;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+.alien-assistant {
+  position: absolute;
+  bottom: 30px; right: 30px;
+  width: 80px; height: 120px;
+  background: radial-gradient(circle at 40% 30%, #0ff, #004);
+  border-radius: 50%/55%;
+  box-shadow: 0 0 20px #0ff;
+  animation: floaty 4s ease-in-out infinite;
+  transition: transform .3s;
+  cursor: pointer;
+  z-index: 10;
+}
+.alien-assistant:hover {
+  transform: scale(1.1);
+}
+.alien-assistant .antenna {
+  position: absolute;
+  top: -25px; left: 50%;
+  width: 4px; height: 25px;
+  background: #0ff;
+  transform: translateX(-50%);
+  box-shadow: 0 -5px 10px #0ff;
+}
+.alien-assistant .face {
+  position: absolute;
+  top: 30px; left: 10px;
+  width: 60px; height: 60px;
+  background: #111;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.alien-assistant .eyes {
+  width: 35px; height: 10px;
+  background: #00faff;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+.alien-assistant .mouth {
+  width: 20px; height: 5px;
+  background: #0ff;
+  border-radius: 5px;
+}
+@keyframes floaty {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.alien-message-bubble {
+  position: absolute;
+  bottom: 150px; right: 110px;
+  background: rgba(0,255,255,0.1);
+  border: 2px solid #0ff;
+  border-radius: 10px;
+  padding: 10px 15px;
+  color: #0ff;
+  font-family: 'Orbitron', monospace;
+  font-size: .9em;
+  max-width: 200px;
+  box-shadow: 0 0 10px #0ff;
+  z-index: 10;
+  animation: pulseBubble 2s infinite alternate;
+}
+@keyframes pulseBubble {
+  from { box-shadow: 0 0 10px #0ff; }
+  to { box-shadow: 0 0 20px #0ff, inset 0 0 15px #00ffff88; }
+}
+.laser-beam {
+  position: absolute;
+  bottom: 150px;
+  width: 4px;
+  background: cyan;
+  box-shadow: 0 0 20px cyan;
+  animation: beamGrow 0.5s ease-out;
+}
+@keyframes beamGrow {
+  from { height: 0; }
+  to { height: 200px; }
+}
